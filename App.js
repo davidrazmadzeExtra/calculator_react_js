@@ -11,7 +11,22 @@ const App = () => {
   const [result, setResult] = useState("");
 
   const addToText = (val) => {
-    setText((text) => [...text, val + " "]);
+    // Check if the last character is an operator or Clear
+    const lastChar = text[text.length - 1];
+
+    // Allow Clear button to be added anytime
+    if (val === "Clear") {
+      setText([]);
+      setResult("");
+      return;
+    }
+
+    // If the last character is an operator, replace it with the new operator
+    if (lastChar && /\+|\-|\*|\//.test(lastChar)) {
+      setText((prevText) => [...prevText.slice(0, -1), val + " "]);
+    } else {
+      setText((prevText) => [...prevText, val + " "]);
+    }
   };
 
   const calculateResult = () => {

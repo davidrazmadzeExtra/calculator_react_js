@@ -1,3 +1,4 @@
+/* Button.css */
 .button-wrapper {
   height: 4em;
   display: flex;
@@ -6,8 +7,18 @@
   font-size: 24px;
   background-color: #5a5a5a;
   color: white;
-  flex: 1;
-
+  flex:1;
   margin: 4px;
   border-radius: 25px;
+  cursor: pointer;
+}
+
+.button-wrapper:hover {
+  background-color: #6a6a6a; /* Adjust the color as needed for hover effect */
+}
+
+/* Additional styles for smaller buttons */
+.small-button-wrapper {
+  padding: 10px;
+  font-size: 16px;
 }
